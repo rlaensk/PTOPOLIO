@@ -1,24 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JAVASCRIPT",
-    "REACT",
-    "PHOTOSOP",
-    "Illustrat",
-    "Git Hub",
-    "Figma",
-  ];
+document.addEventListener("DOMContentLoaded", function () {
+  const marquee = gsap.timeline();
 
-  const skillDiv = document.querySelector("#skill");
-  const marqueeUl = document.createElement("ul");
+  // .marquee-content 요소를 올바르게 선택하여 애니메이션 적용
 
-  skills.forEach((skill) => {
-    const li = document.createElement("li");
-    li.textContent = skill;
-    marqueeUl.appendChild(li);
+  ScrollTrigger.create({
+    animation: marquee,
+    trigger: "#about", // 트리거 요소를 #skill로 설정
+    start: "top 80%",
+    end: "150% 30%",
+    scrub: true,
+    pin: false,
+    markers: true,
   });
-  const firstLi = marqueeUl.firstElementChild.cloneNode(true);
-  marqueeUl.appendChild(firstLi);
-  skillDiv.appendChild(marqueeUl);
 });
