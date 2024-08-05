@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rotate3d 예제</title>
+    <title>Hover Text Animation</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .box {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        position: absolute;
-        top: 0;
-        left: 0;
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .text-container {
+        overflow: hidden;
+      }
+
+      .hover-text {
+        font-size: 2em;
+        font-weight: bold;
+        background: linear-gradient(90deg, blue, blue) left/100% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: background-size 0.5s ease;
+      }
+
+      .text-container:hover .hover-text {
+        background: linear-gradient(90deg, blue, red) right/200% 100%;
       }
     </style>
   </head>
   <body>
-    <div class="box"></div>
-
-    <!-- GSAP 라이브러리 불러오기 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
-    <!-- 애니메이션 스크립트 -->
-    <script>
-      // .box 요소를 선택합니다.
-      const box = document.querySelector(".box");
-
-      const marquee = gsap.timeline();
-      marquee
-        .addLabel("a")
-        .from(".box", { xPercent: -90 }, "a")
-        .to(".box", { xPercent: -50 }, "a")
-        .from(".box", { xPercent: -70 }, "a");
-      ScrollTrigger.create({
-        animation: marquee,
-        trigger: ".box",
-        start: "top 80%",
-        end: "150% 60%",
-        scrub: true,
-        pin: false,
-        markers: false,
-      });
-    </script>
+    <div class="text-container">
+      <p class="hover-text">Hover over this text</p>
+    </div>
   </body>
 </html>

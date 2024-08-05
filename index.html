@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="max-age=31536000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 웹폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,9 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Damion&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
     <!-- css -->
     <link rel="stylesheet" href="./CSS/main.css" />
     <link rel="stylesheet" href="./CSS/reset.css" />
@@ -24,8 +26,34 @@
   <body>
     <div id="wrap">
       <header>
-        <div id="logo" aria-label="duna">DUNA</div>
+        <div id="logo" aria-label="duna">duna</div>
+        <div class="hambergerMenu">
+          <span class="ham1"></span>
+          <span class="ham2"></span>
+        </div>
       </header>
+      <div id="hambergerList">
+        <div class="contact">
+          <h1>How To Contact:</h1>
+          <p>Phone:</p>
+          <p>+82 010-2388-1553</p>
+          <p>E-mail:</p>
+          <p>kike01@kakao.com</p>
+        </div>
+        <div class="myNav">
+          <a href="">HOME</a>
+          <a href="">ABOUT</a>
+          <a href="">WORKS</a>
+          <a href="">GOAL</a>
+        </div>
+        <div class="slide">
+          <div class="slideWrap">
+            <div>WEB PUBLISHER</div>
+            <div>WEB PUBLISHER</div>
+            <div>WEB PUBLISHER</div>
+          </div>
+        </div>
+      </div>
       <main>
         <div class="mainBox">
           <div class="mainImgBox">
@@ -96,10 +124,69 @@
             <span class="na4">긍정적인</span>
           </div>
         </div>
+        <div id="work">
+          <span></span>
+          <p>WORK</p>
+          <div class="projectBox">
+            <div class="backgroundImg">
+              <img src="./img/fff.png" />
+            </div>
+            <div class="project1 project">
+              <div class="titleBox">
+                <span>(01)</span>
+                <div class="titleText">
+                  <h1 class="projectSubject">ELAFONISH</h1>
+                  <h4>jquery를 이용해 반응형으로 만든 웹페이지 입니다.</h4>
+                  <p>#시멘틱 웹 #PC #적응형 #반응형 #</p>
+                </div>
+              </div>
+              <a href="/" class="codeReview">
+                <img src="./img/code.png" alt="codeReview" />
+                code review
+                <img src="./img/arrow.png" class="arrow" alt="code review" />
+              </a>
+            </div>
+            <div class="project2 project">
+              <div class="titleBox">
+                <span>(02)</span>
+                <div class="titleText">
+                  <h1 class="projectSubject">CONECTS</h1>
+                  <h4>
+                    JSON 비동기 통신을 이용해 데이터를 바인딩해 클론코딩한
+                    온라인서점 웹페이지 입니다.
+                  </h4>
+                  <p>#시멘틱 웹 #PC #JSON #jquery</p>
+                </div>
+              </div>
+
+              <a href="/" class="codeReview">
+                <img src="./img/code.png" alt="codeReview" />
+                code review
+                <img src="./img/arrow.png" class="arrow" alt="code review" />
+              </a>
+            </div>
+            <div class="project2 project">
+              <div class="titleBox">
+                <span>(03)</span>
+                <div class="titleText">
+                  <h1 class="projectSubject">ADIDAS</h1>
+                  <h4>React와 Redux를 이용해 만든</h4>
+                  <p>#시멘틱 웹 #PC #JSON #jquery</p>
+                </div>
+              </div>
+              <a href="/" class="codeReview">
+                <img src="./img/code.png" alt="codeReview" />
+                code review
+                <img src="./img/arrow.png" class="arrow" alt="code review" />
+              </a>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="./JS/main.js" async></script>
   </body>
 </html>

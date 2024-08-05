@@ -71,3 +71,35 @@ document.addEventListener("DOMContentLoaded", function () {
     window.requestAnimationFrame(step);
   }
 });
+
+//hambergerMenu
+const $ham1 = document.querySelector(".ham1");
+const $ham2 = document.querySelector(".ham2");
+const $hambergetBox = document.querySelector(".hambergerMenu");
+const $hambergerList = document.querySelector("#hambergerList");
+$hambergetBox.addEventListener("click", function () {
+  $ham1.classList.toggle("active");
+  $ham2.classList.toggle("active");
+  $hambergerList.classList.toggle("active");
+});
+
+//about
+
+document.addEventListener("DOMContentLoaded", function () {
+  const $myName = document.querySelector(".myName");
+  const $skills = document.querySelector(".skills");
+  const $nature = document.querySelector(".natuer");
+  const $body = document.querySelector("body");
+
+  $body.addEventListener("mousemove", function (e) {
+    const x = e.clientY;
+    console.log(x);
+  });
+  $myName.addEventListener("mousemove", function (e) {
+    const rect = $myName.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const width = rect.width;
+    const perventage = (x / width) * 100;
+    console.log(x);
+  });
+});
