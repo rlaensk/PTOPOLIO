@@ -3,40 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hover Text Animation</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+      * {
         margin: 0;
-        background-color: #f0f0f0;
-        font-family: Arial, sans-serif;
       }
-
-      .text-container {
-        overflow: hidden;
+      body {
+        background-color: #cdcaff;
       }
-
-      .hover-text {
-        font-size: 2em;
-        font-weight: bold;
-        background: linear-gradient(90deg, blue, blue) left/100% 100%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transition: background-size 0.5s ease;
-      }
-
-      .text-container:hover .hover-text {
-        background: linear-gradient(90deg, blue, red) right/200% 100%;
+      .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ffa4f4;
+        transform: translate(15px, 15px);
+        transition: all 0.1s linear;
       }
     </style>
   </head>
   <body>
-    <div class="text-container">
-      <p class="hover-text">Hover over this text</p>
-    </div>
+    <div class="circle"></div>
+    <script>
+      const circle = document.querySelector(".circle");
+      document.addEventListener("mousemove", function (e) {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        circle.style.left = mouseX + "px";
+        circle.style.top = mouseY + "px";
+      });
+    </script>
   </body>
 </html>

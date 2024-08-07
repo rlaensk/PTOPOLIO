@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 */
+const $mousePinter = document.querySelector(".mouseChild");
+document.addEventListener("mousemove", function (e) {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  $mousePinter.style.left = mouseX + "px";
+  $mousePinter.style.top = mouseY + "px";
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // .marquee-content 요소를 선택합니다.
   const marqueeContent = document.querySelector(".marquee-content");
