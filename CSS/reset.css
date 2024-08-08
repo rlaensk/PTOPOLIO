@@ -101,6 +101,8 @@ video {
   box-sizing: border-box;
   font-family: "MinSans-Regular";
 }
+body, html {scroll-behavior:smooth;}
+ 
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

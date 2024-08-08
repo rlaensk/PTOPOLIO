@@ -3,37 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>Mouse Follow Box</title>
     <style>
-      * {
-        margin: 0;
-      }
       body {
-        background-color: #cdcaff;
+        margin: 0;
+        height: 100vh;
       }
-      .circle {
+      .follow-box {
+        position: absolute;
+        width: 100%;
+
+        height: 600px;
+        background-color: rgb(174, 255, 0);
+        border-radius: 5px;
+        pointer-events: none; /* 박스가 마우스 이벤트를 받지 않도록 설정 */
+      }
+      .moveBox {
+        width: 100px; /* 박스 크기 설정 */
+        height: 100px; /* 박스 크기 설정 */
+        border: 1px solid black;
+        background-color: red; /* 색상 추가 */
+        position: absolute; /* 절대 위치 설정 */
+        pointer-events: none; /* 마우스 이벤트를 받지 않도록 설정 */
+        display: none; /* 기본적으로 숨김 */
+      }
+      .mouseChild {
+        width: 30px;
+        height: 30px;
         position: absolute;
         top: 0;
         left: 0;
-        width: 50px;
-        height: 50px;
+        background-color: #000000;
         border-radius: 50%;
-        background-color: #ffa4f4;
         transform: translate(15px, 15px);
-        transition: all 0.1s linear;
+        z-index: 100;
       }
     </style>
   </head>
   <body>
-    <div class="circle"></div>
+    <div class="follow-box">
+      <div class="mouseChild"></div>
+      <div class="moveBox"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script>
-      const circle = document.querySelector(".circle");
+      const $mousePointer = document.querySelector(".mouseChild");
       document.addEventListener("mousemove", function (e) {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
-        circle.style.left = mouseX + "px";
-        circle.style.top = mouseY + "px";
+        $mousePointer.style.left = mouseX + "px";
+        $mousePointer.style.top = mouseY + "px";
+      });
+
+      const $moveBox = document.querySelector(".moveBox");
+      const $followBox = document.querySelector(".follow-box");
+
+      // JavaScript로 마우스 움직임 이벤트를 감지하고 박스 위치를 업데이트합니다.
+      document.addEventListener("mousemove", function (event) {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        // follow-box의 경계 확인
+        const followBoxRect = $followBox.getBoundingClientRect();
+
+        // 마우스 위치가 follow-box 내부에 있는지 확인
+        if (
+          mouseX >= followBoxRect.left &&
+          mouseX <= followBoxRect.right &&
+          mouseY >= followBoxRect.top &&
+          mouseY <= followBoxRect.bottom
+        ) {
+          // 내부에 있으면 moveBox를 표시하고 위치를 업데이트
+          gsap.to($moveBox, {
+            x: mouseX - 50,
+            y: mouseY - followBoxRect.top - 50,
+            autoAlpha: 1,
+            duration: 0.2,
+            display: "block",
+          });
+        } else {
+          // 외부에 있으면 moveBox를 숨김
+          gsap.to($moveBox, {
+            autoAlpha: 0,
+            duration: 0.2,
+            display: "none",
+          });
+        }
       });
     </script>
   </body>

@@ -16,12 +16,13 @@ body {
   background-color: #d0ee17;
   border-radius: 50%;
   transform: translate(15px, 15px);
+  z-index: 100;
 }
 #wrap .bodyImg {
   top: -180px;
 
   position: absolute;
-  right: -164px;
+  right: -15px;
   filter: blur(8px);
 }
 #wrap header {
@@ -342,9 +343,10 @@ main {
   justify-content: center;
   text-align: center;
   height: 115px;
+  transition: all 0.5s ease-in-out;
 }
 #about > div:not(.marquee-content) span {
-  width: 305px;
+  width: 255px;
   height: 85px;
   font-size: 3rem;
   margin: 10px 20px;
@@ -352,17 +354,18 @@ main {
 }
 
 /* myName css */
+
 #about .myName span {
   padding: 18px 0;
 }
 #about .myName .jp {
-  width: 430px;
+  width: 345px;
 }
 #about .myName .et {
-  width: 220px;
+  width: 185px;
 }
 #about .myName .er {
-  width: 200px;
+  width: 165px;
 }
 #about .myName .ko {
   width: 200px;
@@ -371,6 +374,7 @@ main {
   padding: 10px 20px;
 }
 #about .myName .en {
+  width: 300px;
   border: 5px solid #ffffff;
   border-radius: 48%;
   padding: 10px 20px;
@@ -387,16 +391,16 @@ main #about .skills .js {
   width: 320px;
   border: 4px solid #ffffff;
   border-radius: 48%;
-  padding: 10px 20px;
+  padding: 16px 20px;
 }
 main #about .skills .photo {
-  width: 295px;
+  width: 265px;
 }
 main #about .skills .ill {
-  width: 215px;
+  width: 190px;
 }
 main #about .skills .git {
-  width: 195px;
+  width: 170px;
 }
 main #about .skills .react {
   border: 4px solid #ffffff;
@@ -437,7 +441,7 @@ main #about .skills .css {
 
 /* nature css */
 main #about .nature span {
-  width: 205px;
+  width: 142px;
   height: 100%;
   padding: 33px 0;
 }
@@ -450,7 +454,7 @@ main #about .nature span.na1 {
   padding: 18px 10px;
 }
 main #about .nature span.na2 {
-  width: 225px;
+  width: 195px;
   height: 82%;
   padding: 18px 10px;
 }
@@ -462,7 +466,7 @@ main #about .nature span.na3 {
   padding: 18px 10px;
 }
 main #about .nature span.na4 {
-  width: 230px;
+  width: 175px;
 }
 
 /* work css */
@@ -482,7 +486,7 @@ main #about .nature span.na4 {
 }
 #work > P {
   font-size: 4rem;
-  margin-bottom: 30px;
+  margin: 50px;
 }
 #work .projectBox {
   width: 100%;
@@ -498,18 +502,18 @@ main #about .nature span.na4 {
   top: 41px;
   transform: rotate(-101deg);
 }
-#work .projectBox .backgroundImg img {
+#work .projectBox .backgroundImg > img {
   width: 250px;
   height: 250px;
 }
 #work .projectBox .project {
   width: 80%;
-  height: 320px;
+  height: 500px;
   display: flex;
   border-top: 0.8px solid #ffffff;
   justify-content: space-between;
   align-items: center;
-  padding: 0 115px;
+  padding: 50px 115px;
 }
 
 #work .projectBox .titleBox {
@@ -518,6 +522,7 @@ main #about .nature span.na4 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
 }
 #work .projectBox .titleBox span {
   font-size: 1rem;
@@ -526,6 +531,20 @@ main #about .nature span.na4 {
 }
 #work .projectBox .titleBox h1 {
   font-size: 4rem;
+}
+#work .projectBox .project .projectImg_el {
+  width: 500px;
+  height: 450px;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+#work .projectBox .project .projectImg_el img {
+  width: 500px;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
 }
 #work .projectBox .codeReview {
   display: flex;
@@ -601,8 +620,7 @@ footer {
 .gola .golaBgImgBox1 img:first-child {
   align-self: flex-end;
 }
-.gola .golaBgImgBox1 img:last-child {
-}
+
 .gola .golaBgImgBox2 {
   right: 0;
   bottom: -51px;
