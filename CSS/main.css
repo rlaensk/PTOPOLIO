@@ -537,8 +537,13 @@ main #about .nature span.na4 {
   height: 450px;
   visibility: hidden;
   position: absolute;
-  pointer-events: none;
+
   z-index: 10;
+}
+#work .projectBox .project .projectImg_el a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 #work .projectBox .project .projectImg_el img {
   width: 500px;
@@ -553,6 +558,7 @@ main #about .nature span.na4 {
   font-size: 1.5rem;
   letter-spacing: 4px;
   align-items: self-start;
+  cursor: pointer;
 }
 #work .projectBox .codeReview img {
   width: 30px;
