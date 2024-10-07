@@ -559,6 +559,10 @@ main #about .nature span.na4 {
   letter-spacing: 4px;
   align-items: self-start;
   cursor: pointer;
+  transition: all 0.5s;
+}
+#work .projectBox .codeReview:hover {
+  transform: scale(1.1);
 }
 #work .projectBox .codeReview img {
   width: 30px;
